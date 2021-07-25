@@ -66,14 +66,14 @@ public class CSVController {
       return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
-
-  @GetMapping("/download/{fileName:.+}")
-  public ResponseEntity<Resource> downloadFile(@PathVariable String fileName) {
+  
+  /*@GetMapping("/download/{fileName:.+}")
+  public ResponseEntity<InputStreamResource> downloadFile(@PathVariable String fileName) {
     InputStreamResource file = new InputStreamResource(fileService.load());
 
     return ResponseEntity.ok()
         .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + fileName)
         .contentType(MediaType.parseMediaType("application/csv"))
         .body(file);
-  }
+  }*/
 }
